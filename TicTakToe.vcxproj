@@ -24,7 +24,7 @@
     <ProjectGuid>{24c80653-ee9a-4070-9c26-2ac89e6b4d5c}</ProjectGuid>
     <RootNamespace>TicTakToe</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>TikTacToe</ProjectName>
+    <ProjectName>TicTacToeGame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -79,6 +79,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\Soft\vclib\SDL2_image-2.6.0\include;D:\Soft\vclib\SDL2-2.0.22\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Soft\vclib\SDL2-2.0.22\lib\x64;D:\Soft\vclib\SDL2_image-2.6.0\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -121,6 +123,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2_image.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -140,7 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enums.h" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TicTacToeGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TicTacToeGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
